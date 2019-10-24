@@ -15,13 +15,13 @@ public class Casa implements Tasable {
 	public float getValor() {
 		float valor = 0f;
 		if (muebles.size() > 0) {
-			valor += muebles.stream().map(x -> x.getValor()).reduce((v1, v2) -> v1 + v2).orElse(null);
+			valor += muebles.stream().map(x -> x.getValor()).reduce((v1, v2) -> v1 + v2).orElse(0f);
 		}
 		if (enseres.size() > 0) {
-			valor += enseres.stream().map(x -> x.getValor()).reduce((v1, v2) -> v1 + v2).orElse(null);
+			valor += enseres.stream().map(x -> x.getValor()).reduce((v1, v2) -> v1 + v2).orElse(0f);
 		}
 		if (electrodomesticos.size() > 0) {
-			valor += electrodomesticos.stream().map(x -> x.getValor()).reduce((v1, v2) -> v1 + v2).orElse(null);
+			valor += electrodomesticos.stream().map(x -> x.getValor()).reduce((v1, v2) -> v1 + v2).orElse(0f);
 		}
 		return valor;
 	}
